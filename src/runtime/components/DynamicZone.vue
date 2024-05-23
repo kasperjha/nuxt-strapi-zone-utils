@@ -10,6 +10,7 @@
 <script setup lang="ts">
 import DebugCard from '../DebugCard.vue'
 import BlockRenderer from './BlockRenderer.vue'
+import { useStrapi, ref, computed } from '#imports'
 
 const props = defineProps<{
   field: string
