@@ -1,4 +1,4 @@
-import { defineNuxtModule, addComponentsDir, createResolver, addTemplate, updateTemplates } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, createResolver, addTemplate, updateTemplates, installModule } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 import type { HookComponent } from './types.js'
 import generateComponentMap from './mapGeneration.js'
@@ -17,7 +17,9 @@ interface ConfigOptions {
  * and registers a hook that rebuilds the component map.
  * @param moduleOptions Module options from nuxt config.
  */
-function moduleSetup(moduleOptions: ConfigOptions, nuxt: Nuxt) {
+async function moduleSetup(moduleOptions: ConfigOptions, nuxt: Nuxt) {
+  await installModule('@nuxtjs/strapi')
+
   addComponentsDir({
     path: resolver.resolve('runtime/components'),
   })
