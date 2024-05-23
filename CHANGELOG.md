@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.3
+
+[compare changes](https://github.com/kasperjha/nuxt-strapi-zone-utils/compare/v0.1.2...v0.1.3)
+
+### 🩹 Fixes
+
+- Empty component map throws error ([f1ff816](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/f1ff816))
+- ComponentMap grows over time ([822216d](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/822216d))
+
+### 📖 Documentation
+
+- Link to strapi module documentation ([e18a212](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/e18a212))
+
+### ❤️ Contributors
+
+- Kasper JH. Alfarnes
+
 ## v0.1.2
 
 [compare changes](https://github.com/kasperjha/nuxt-strapi-zone-utils/compare/v0.1.1...v0.1.2)
