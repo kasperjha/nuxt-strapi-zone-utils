@@ -25,7 +25,7 @@ async function moduleSetup(moduleOptions: ConfigOptions, nuxt: Nuxt) {
   })
 
   const componentPrefix = moduleOptions.prefix
-  const componentList: HookComponent[] = []
+  let componentList: HookComponent[] = []
 
   addTemplate({
     filename: 'strapiZonesComponentMap.ts',
@@ -33,8 +33,7 @@ async function moduleSetup(moduleOptions: ConfigOptions, nuxt: Nuxt) {
   })
 
   const componentsHook = (components: HookComponent[]) => {
-    const relevantComponents = components.filter(c => c.pascalName.startsWith(componentPrefix))
-    componentList.push(...relevantComponents)
+    componentList = components.filter(c => c.pascalName.startsWith(componentPrefix))
     console.log('updated component list')
     updateTemplates()
   }
