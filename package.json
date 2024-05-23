@@ -1,6 +1,6 @@
 {
   "name": "nuxt-strapi-zone-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utility components for rendering strapi dynamic zones.",
   "repository": "kasperjha/nuxt-strapi-zone-utils",
   "license": "MIT",
