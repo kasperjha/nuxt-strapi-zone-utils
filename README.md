@@ -5,6 +5,20 @@ Utility components for rendering strapi dynamic zones in a nuxt application.
 > [!WARNING]
 > This package is in development and does not have a stable API. Do not rely on backwards compatability as breaking changes may occur frequently. PRs and issues are welcome.
 
+## Installation
+
+Install the module using your favourite package manager
+```
+npm i nuxt-strapi-zone-utils
+```
+
+`@nuxtjs/strapi` is installed as a dependency. For automatic fetching of dynamic zone data make sure to configure the url to your strapi instance through an `.env` file or `nuxt.config.ts`.
+
+```bash
+# .env.development
+STRAPI_URL=http://localhost:1337
+```
+
 ## Usage
 
 The `DynamicZone` component renders a dynamic zone. It fetches zone data from your strapi instance, maps zone components to their vue counterparts and passes the appropriate props.
