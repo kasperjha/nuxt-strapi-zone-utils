@@ -1,7 +1,7 @@
 <template>
   <BlockRenderer v-if="data !== null" :zone-data="data" :debug="debug" />
   <DebugCard v-if="data === null || debug">
-    DynamicPage debug data:
+    DynamicZone:
     <p>error: {{ error }}</p>
     <p>data: {{ data }}</p>
   </DebugCard>
@@ -34,10 +34,9 @@ const data = computed(() => rawData.value !== null ? rawData.value.data.attribut
 getPageData()
   .then((d) => {
     rawData.value = d
-    console.log(d)
   })
-  .catch((e) => {
-    console.log(e)
+  .catch((e: Error) => {
+    console.error('Error rendering dynamic zone:', e)
     error.value = e
   })
 </script>
