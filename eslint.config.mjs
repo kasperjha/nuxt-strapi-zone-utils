@@ -15,6 +15,6 @@ export default createConfigForNuxt({
     ],
   },
 })
-  .append(
-    // your custom flat config here...
-  )
+  .append({
+
+  }).removeRules('vue/max-attributes-per-line')

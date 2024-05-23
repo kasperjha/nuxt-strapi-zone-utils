@@ -1,15 +1,8 @@
 import { writeFile } from 'node:fs'
 import { createResolver } from '@nuxt/kit'
+import type { HookComponent } from './types'
 
 const resolver = createResolver(import.meta.url)
-
-/**
- * Recreated type from the `components:extend` nuxt hook.
- */
-interface HookComponent {
-  pascalName: string
-  kebabName: string
-}
 
 /**
  * Generates component map file contents.
@@ -22,14 +15,14 @@ function generateFileContents(relevantComponents: HookComponent[], prefix: strin
     .map(c => c.pascalName)
     .join(', ')
   const blockName = (c: HookComponent) => `${prefix.toLowerCase()}.${c.kebabName.slice(prefix.length + 1)}`
-  const buildMapRows = () => relevantComponents.map(c => `['${blockName(c)}', ${c.pascalName}]`).join(',\n  ') + ',\n'
+  const buildMapRows = () => relevantComponents.map(c => `['${blockName(c)}', ${c.pascalName}]`).join(',\n  ')
   const mapRows = (relevantComponents.length !== 0) ? buildMapRows() : ''
   return ''
-    + 'import { type Component } from "@nuxt/schema"\n'
-    + 'import { ' + importNames + ' } from "#components"\n\n'
-    + 'export default new Map<string, Component>([\n'
+    + 'import { type Component } from \'@nuxt/schema\'\n'
+    + 'import { ' + importNames + ' } from \'#components\'\n\n'
+    + 'export default new Map<string, Component>([\n  '
     + mapRows
-    + '])\n'
+    + ',\n])\n'
 }
 
 /**

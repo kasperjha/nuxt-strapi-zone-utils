@@ -1,6 +1,6 @@
 <template>
   <div v-for="block in zoneData" :key="block.id">
-    <component v-if="componentMap.has(block.__component)" :is="componentMap.get(block.__component)" v-bind="block" />
+    <component :is="componentMap.get(block.__component)" v-if="componentMap.has(block.__component)" v-bind="block" />
 
     <DebugCard v-else style="margin-top: 20px;">
       No component with name:
