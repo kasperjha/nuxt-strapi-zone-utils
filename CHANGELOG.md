@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/kasperjha/nuxt-strapi-zone-utils/compare/v0.1.1...v0.1.2)
+
+### 🚀 Enhancements
+
+- Auto install @nuxtjs/strapi ([e5dfb52](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/e5dfb52))
+
+### 🩹 Fixes
+
+- TS errors ([55de980](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/55de980))
+- Explicit composable imports ([471c38d](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/471c38d))
+
+### 💅 Refactors
+
+- Generate component map with templates ([e596103](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/e596103))
+
+### 📖 Documentation
+
+- Add install documentation ([65a8502](https://github.com/kasperjha/nuxt-strapi-zone-utils/commit/65a8502))
+
+### ❤️ Contributors
+
+- Kasper JH. Alfarnes
+
 ## v0.1.1
 
 
