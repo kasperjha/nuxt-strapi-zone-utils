@@ -12,12 +12,13 @@ Install the module using your favourite package manager
 npm i nuxt-strapi-zone-utils
 ```
 
-`@nuxtjs/strapi` is installed as a dependency. For automatic fetching of dynamic zone data make sure to configure the url to your strapi instance through an `.env` file or `nuxt.config.ts`.
+`@nuxtjs/strapi` is installed as a dependency to automatically fetch dynamic zone data. Make sure to [configure the url to your strapi instance](https://strapi.nuxtjs.org/setup) through an `.env` file or `nuxt.config.ts`.
 
 ```bash
 # .env.development
 STRAPI_URL=http://localhost:1337
 ```
+
 
 ## Usage
 
