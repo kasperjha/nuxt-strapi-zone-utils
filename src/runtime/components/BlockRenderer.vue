@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import DebugCard from '../DebugCard.vue'
-import componentMap from '../generated/componentMap'
+import componentMap from '#build/strapiZonesComponentMap'
 
 type ZoneData = {
   id: number

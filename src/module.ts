@@ -1,7 +1,7 @@
-import { defineNuxtModule, addComponentsDir, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, createResolver, addTemplate, updateTemplates } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
-import buildComponentMap from './mapGeneration.js'
 import type { HookComponent } from './types.js'
+import generateComponentMap from './mapGeneration.js'
 
 const resolver = createResolver(import.meta.url)
 
@@ -21,8 +21,22 @@ function moduleSetup(moduleOptions: ConfigOptions, nuxt: Nuxt) {
   addComponentsDir({
     path: resolver.resolve('runtime/components'),
   })
+
   const componentPrefix = moduleOptions.prefix
-  const componentsHook = (components: HookComponent[]) => buildComponentMap(components, componentPrefix)
+  const componentList: HookComponent[] = []
+
+  addTemplate({
+    filename: 'strapiZonesComponentMap.ts',
+    getContents: () => generateComponentMap(componentList, componentPrefix),
+  })
+
+  const componentsHook = (components: HookComponent[]) => {
+    const relevantComponents = components.filter(c => c.pascalName.startsWith(componentPrefix))
+    componentList.push(...relevantComponents)
+    console.log('updated component list')
+    updateTemplates()
+  }
+
   nuxt.hook('components:extend', componentsHook)
 }
 
