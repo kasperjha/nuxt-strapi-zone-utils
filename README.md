@@ -1,9 +1,9 @@
 # nuxt-strapi-zone-utils
 
-Utility components for rendering strapi dynamic zones in a nuxt application.
+Nuxt module with utility components that automatically render dynamic content from your Strapi instance.
 
-> [!WARNING]
-> This package is in development and does not have a stable API. Do not rely on backwards compatability as breaking changes may occur frequently. PRs and issues are welcome.
+> [!IMPORTANT]
+> The APIs provided in this module are unstable. Use with caution as breaking changes occur frequently
 
 ## Installation
 
